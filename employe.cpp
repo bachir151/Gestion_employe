@@ -19,6 +19,9 @@ public :
 		
 	}
 
+public :
+	Employe()=default; 
+
 
 void afficherInfo(){
 	std::cout << "Nom: " << nom << std::endl;
@@ -75,6 +78,10 @@ void afficherListe(){
    ◦ Après modification, les informations doivent être mises à jour dans le fichier texte.
 */
 
+
+
+
+
 //4-Supprimer un employé
 
 //5-Rechercher un employé 
@@ -87,14 +94,37 @@ void afficherListe(){
 
 
 int main(){
-    //Instanciation
-	Employe employe1("Diedhiou","Ahmed","albachirou@gmail.com", "0612219010");
 
-	employe1.afficherInfo();
-	//employe1.ajouterEmploye();
+	int choix;
+	std::string nom;
+	std::string prenom;
+	std::string email;
+	std::string num;
 
-	std::cout << ".......Liste des client ........."<<std::endl;
-	employe1.afficherListe();
+	//std::cout <<"Quest-ce que voulez faire ? " << std::endl;
+	std::cout <<"- Ajouter un nouvel employé : tapez 1 "<< std::endl;
+	std::cout <<"- Consulter la liste des employés : tapez 2 " << std::endl;
+	std::cout << "Entrez votre choix:"; std::cin >> choix; 
+
+	if (choix==1){
+		std::cout << "Saisir nom : "; std::cin >> nom;
+		std::cout << "Saisir prenom : "; std::cin >> prenom;
+		std::cout << "Saisir email : "; std::cin >> email;
+		std::cout << "Saisir numéro téléphone : "; std::cin >> num;
+
+		Employe employe(nom,prenom,email,num);
+		employe.ajouterEmploye();
+		std::cout <<"L'employé a été ajouté avec succès.." << std::endl;
+	}
+
+
+	if (choix==2){
+		Employe employe;
+		employe.afficherListe();
+		std::cout <<"\nLa liste a été ajoutée avec succès"<<std::endl;
+	}
+
+    
 
 	return 0;
 }
