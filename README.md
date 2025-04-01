@@ -50,10 +50,11 @@ Développer une application en C++ permettant de gérer une liste d'employés. L
 ## Installation et exécution
 1. Compiler le programme avec g++ :
    ```sh
-   g++ -o gestion_employes main.cpp
+   make
    ```
 2. Exécuter l'application :
    ```sh
+   cd bin
    ./gestion_employes
    ```
 
